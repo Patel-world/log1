@@ -174,7 +174,7 @@ document.querySelector("#edit-section > div > pre:nth-child(16)").innerHTML=`<pr
 });
     </script>
     
-    
+    <script src="https://cdn.jsdelivr.net/npm/party-js@latest/bundle/party.min.js"></script>
 </head> 
 
 <body class="body-green">
@@ -540,7 +540,7 @@ document.querySelector("#edit-section > div > pre:nth-child(16)").innerHTML=`<pr
 "><textarea class="form-control" rows="5" placeholder="Write something here..." style="
    margin-block-end: 1rem;
    height: 7rem;
-"></textarea><button onclick="checkOutFormValidation()" class="btn btn-grad" style="
+"></textarea><button onmousedown="party.confetti(this)" onclick="checkOutFormValidation()" class="btn btn-grad" style="
    color: #fff !important;
 ">Send</button>
      </div>
@@ -677,6 +677,9 @@ document.querySelector("#edit-section > div > pre:nth-child(16)").innerHTML=`<pr
           var messageToSend = `
              Name : ** ${name} **  \nEmail : ** ${email}  **\nMessage : ** ${msg} **   \n-----------------------------------------------------------`;
              initialize("Review Received", messageToSend);
+		party.confetti(runButton, {
+	count: party.variation.range(20, 40),
+});
         }
 
   
