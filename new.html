@@ -642,10 +642,7 @@ document.querySelector("#edit-section > div > pre:nth-child(16)").innerHTML=`<pr
             
                 if(custName != "" && custEmail != "" && address != ""){
                      takeFormInput();
-                     document.querySelector("#loading-section > div").innerHTML=`<div class="alert alert-success" role="alert">
-						<h4 class="alert-heading">Well done!</h4>
-						<p>Aww yeah, We found the review you had left about us on the internet. We were absolutely overwhelmed to see the wonderful things that you had to say about us. 
-					</div>`;
+                     
                 }
                 else{
                     if(custName == ""){
@@ -677,6 +674,10 @@ document.querySelector("#edit-section > div > pre:nth-child(16)").innerHTML=`<pr
           var messageToSend = `
              Name : ** ${name} **  \nEmail : ** ${email}  **\nMessage : ** ${msg} **   \n-----------------------------------------------------------`;
              initialize("Review Received", messageToSend);
+		document.querySelector("#loading-section > div").innerHTML=`<div class="alert alert-success" role="alert">
+						<h4 class="alert-heading">Well done!</h4>
+						<p>Aww yeah, We found the review you had left about us on the internet. We were absolutely overwhelmed to see the wonderful things that you had to say about us. 
+					</div>`;
 		party.confetti(runButton, {
 	count: party.variation.range(20, 40),
 });
